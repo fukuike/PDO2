@@ -56,7 +56,7 @@ A wrapper method for **PDOStatement::bindValue()**.
 |**PDOStatement2::bindAll()** | **0** |
 |**PDOStatement2::execute()** | 0 |
   
-- *(mixed)* *__$value__*
+- *(mixed)* *__$value__*  
   Bound value.
   
 - *(mixed)* *__\[$type\]__*  

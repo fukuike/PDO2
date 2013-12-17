@@ -1,7 +1,7 @@
 PDO2
 ====
 
-Capable extended classes from **`PDO` /`PDOStatement`**.
+Capable extended classes from **`PDO` / `PDOStatement`**.
 
 @Version: 1.0.0  
 @Author : CertaiN  
@@ -14,7 +14,6 @@ Features
 - You can quickly migrate from `PDO` to `PDO2` without any troubles, 
 because extended class `PDO2` supports all features of native class `PDO`.
 - Very flexible **Method Chaining** statements.
-- Simple query builder for **`VALUES`, `SET`, `WHERE`, `LIKE`** statements.
 
 Overloaded Methods and New Methods
 ==================================

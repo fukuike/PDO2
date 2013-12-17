@@ -28,9 +28,17 @@ class PDOStatement2 extends PDOStatement {
         return $this;
     }
     
+    public function setFetchMode($mode, $params = null) {
+        call_user_func_array(
+            array('parent', __FUNCTION__),
+            func_get_args()
+        );
+        return $this;
+    }
+    
     public function bind($name, $value, $type = PDO::PARAM_STR) {
         if (!is_string($name) || (string)(int)$name === $name) {
-            $name++;
+            ++$name;
         }
         if ($type == PDO2::PARAM_LIKE) {
             $value = '%' . addcslashes($value, '\\_%') . '%';
@@ -50,14 +58,6 @@ class PDOStatement2 extends PDOStatement {
             $type = is_array($format) && isset($format[$i]) ? $format[$i] : $format;
             $this->bind($i, $value, $type);
         }
-        return $this;
-    }
-    
-    public function setFetchMode($mode, $params = null) {
-        call_user_func_array(
-            array('parent', __FUNCTION__),
-            func_get_args()
-        );
         return $this;
     }
     

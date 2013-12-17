@@ -40,7 +40,7 @@ class PDOStatement2 extends PDOStatement {
         if (!is_string($name) || (string)(int)$name === $name) {
             ++$name;
         }
-        if ($type == PDO2::PARAM_LIKE) {
+        if ($type === PDO2::PARAM_LIKE) {
             $value = '%' . addcslashes($value, '\\_%') . '%';
             $type = PDO::PARAM_STR;
         }
@@ -75,7 +75,7 @@ class PDOStatement2 extends PDOStatement {
     }
     
     private static function getTypeConst($type) {
-        if (in_array($type, self::$typeMap)) {
+        if (in_array($type, self::$typeMap, true)) {
             return $type;
         }
         if (!is_scalar($type) || !isset(self::$typeMap[$type])) {

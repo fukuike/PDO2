@@ -1,5 +1,15 @@
 <?php
 
+/**
+ *  PDO2
+ *
+ * @Version 1.0.0  
+ * @Author  CertaiN  
+ * @License BSD 2-Clause  
+ * @GitHub  http://github.com/Certainist/PDO2
+ *
+ * @require PDO2Statement.class.php
+ */
 class PDO2 extends PDO {
     
     const PARAM_LIKE = -1;

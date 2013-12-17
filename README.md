@@ -1,12 +1,12 @@
 PDO2
 ====
 
-Capable extended classes from **`PDO`** / **`PDOStatement`**.
+Capable extended classes from **`PDO` /`PDOStatement`**.
 
-@Version: 1.0.0
-@Author : CertaiN
-@License: BSD 2-Clause
-@GitHub : http://github.com/Certainist/PDO2
+@Version: 1.0.0  
+@Author : CertaiN  
+@License: BSD 2-Clause  
+@GitHub : http://github.com/Certainist/PDO2  
 
 Features
 ========
@@ -14,7 +14,7 @@ Features
 - You can quickly migrate from `PDO` to `PDO2` without any troubles, 
 because extended class `PDO2` supports all features of native class `PDO`.
 - Very flexible **Method Chaining** statements.
-- Simple query builder for **`VALUES`**, **`SET`**, **`WHERE`**, **`LIKE`** statements.
+- Simple query builder for **`VALUES`, `SET`, `WHERE`, `LIKE`** statements.
 
 Overloaded Methods and New Methods
 ==================================
@@ -118,7 +118,7 @@ Return `$this` for method chaining.
 
 - **Comma-Separeted** alias chars.
 - Numeric indices can be omitted.
-- `'s'` can be ommited because default type is `PDO::PARAM_STR`.
+- `'s'` can be ommited because default type is **PDO::PARAM_STR**.
 
 ```php
 $sql = 'SELECT * FROM people WHERE country = ? AND age = ? AND address LIKE ?';

@@ -8,7 +8,7 @@
  * @License BSD 2-Clause  
  * @GitHub  http://github.com/Certainist/PDO2
  *
- * @require PDO2Statement.class.php
+ * @require PDOStatement2.class.php
  */
 class PDO2 extends PDO {
     

@@ -15,8 +15,8 @@ Features
 because extended class `PDO2` supports all features of native class `PDO`.
 - Very flexible **Method Chaining** statements.
 
-Overloaded Methods and New Methods
-==================================
+Overriden or New Methods
+========================
 
 PDO2::__construct()
 ------------------

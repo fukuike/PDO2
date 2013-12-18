@@ -34,7 +34,7 @@ PDOStatement2::execute()<br />PDOStatement2::setFetchMode()
 -----------------------
 
 Same as **PDOStatement::execute()** or **PDOStatement::setFetchMode()**,
-but these returns `$this` for method chaining.
+but these return `$this` for method chaining.
 
 PDOStatement2::bind()
 ---------------------
@@ -69,7 +69,7 @@ A wrapper method for **PDOStatement::bindValue()**.
 | INT     |PDO::PARAM_INT  | i           | Also can be used for **FLOAT** and **DOUBLE**. |
 | TEXT    |PDO::PARAM_STR  | s           |                                                |
 | BLOB    |PDO::PARAM_LOB  | l           | For stream resources.                          |
-| TEXT    |**PDO2::PARAM_LIKE** | **L**  | Propery formatted for **LIKE** search.         |
+| TEXT    |**PDO2::PARAM_LIKE** | **L**  | Properly formatted for **LIKE** search.        |
 
 ### Return Value
 

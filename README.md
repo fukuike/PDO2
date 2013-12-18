@@ -45,7 +45,7 @@ A wrapper method for **PDOStatement::bindValue()**.
 
 - *(mixed)* *__$name__*  
   The placeholder **index** or **name**.  
-  Be carefull for differences of start indices.  
+  Be carefull for differences on start indices.  
   
 | Methods | Start Indices |
 |:--|:-------:|
@@ -62,7 +62,7 @@ A wrapper method for **PDOStatement::bindValue()**.
 - *(mixed)* *__\[$type\]__*  
   Choose appropriate type constant or alias char. Default value is **PDO::PARAM_STR**.
 
-| Type    | Constants      | Alias chars | Notes                                          |
+| Types   | Constants      | Alias chars | Notes                                          |
 |:-------:|:---------------|:-----------:|:-----------------------------------------------|
 | BOOL    |PDO::PARAM_BOOL | b           |                                                |
 | NULL    |PDO::PARAM_NULL | n           |                                                |
@@ -79,7 +79,7 @@ Return `$this` for method chaining.
 
 ```php
 $sql = 'SELECT * FROM people WHERE country = ? AND age = ? AND address LIKE ?';
-$people = $pdo->prepare($sql);
+$people = $pdo->prepare($sql)
               ->bind(0, 'JAPAN')
               ->bind(1, 21, PDO::PARAM_INT)
               ->bind(2, 'Nagoya', PDO2::PARAM_LIKE)
@@ -91,7 +91,7 @@ Colons can be omitted.
 
 ```php
 $sql = 'SELECT * FROM people WHERE country = :country AND age = :age AND address LIKE :address';
-$people = $pdo->prepare($sql);
+$people = $pdo->prepare($sql)
               ->bind('country', 'JAPAN')
               ->bind('age', 21, 'i')
               ->bind('address', 'Nagoya', 'L')
@@ -121,7 +121,7 @@ Return `$this` for method chaining.
 
 ```php
 $sql = 'SELECT * FROM people WHERE country = ? AND age = ? AND address LIKE ?';
-$people = $pdo->prepare($sql);
+$people = $pdo->prepare($sql)
               ->bindAll(array('JAPAN', 21, 'Nagoya'), 's,i,L')
               ->execute()
               ->fetchAll();
@@ -129,7 +129,7 @@ $people = $pdo->prepare($sql);
 
 ```php
 $sql = 'SELECT * FROM people WHERE country = ? AND age = ? AND address LIKE ?';
-$people = $pdo->prepare($sql);
+$people = $pdo->prepare($sql)
               ->bindAll(array('JAPAN', 21, 'Nagoya'), '1=i,2=L')
               ->execute()
               ->fetchAll();
@@ -137,7 +137,7 @@ $people = $pdo->prepare($sql);
 
 ```php
 $sql = 'SELECT * FROM people WHERE country = :country AND age = :age AND address LIKE :address';
-$people = $pdo->prepare($sql);
+$people = $pdo->prepare($sql)
               ->bindAll(array('age' => $age, 'address' => $address), 'age=i,address=L')
               ->execute()
               ->fetchAll();
@@ -150,7 +150,7 @@ Bind **all** parameters with specified type.
 
 ```php
 $sql = 'SELECT * FROM tablets WHERE name LIKE ? AND manufacturer LIKE ?';
-$people = $pdo->prepare($sql);
+$people = $pdo->prepare($sql)
               ->bindAll(array('Nexus', 'Google'), PDO2::PARAM_LIKE)
               ->execute()
               ->fetchAll();
@@ -158,7 +158,7 @@ $people = $pdo->prepare($sql);
 
 ```php
 $sql = 'SELECT * FROM tablets WHERE name LIKE :name AND manufacturer LIKE :manufacturer';
-$people = $pdo->prepare($sql);
+$people = $pdo->prepare($sql)
               ->bindAll(array('name' => 'Nexus', 'manufacturer' => 'Google'), PDO2::PARAM_LIKE)
               ->execute()
               ->fetchAll();
@@ -170,7 +170,7 @@ Arrays can contain both **Constants** and **Alias Chars**.
 
 ```php
 $sql = 'SELECT * FROM people WHERE country = :country AND age = :age AND address LIKE :address';
-$people = $pdo->prepare($sql);
+$people = $pdo->prepare($sql)
               ->bindAll(
                   array('age' => $age, 'address' => $address),
                   array('age' => 'i',  'address' => 'L'     )
@@ -181,7 +181,7 @@ $people = $pdo->prepare($sql);
 
 ```php
 $sql = 'SELECT * FROM people WHERE country = :country AND age = :age AND address LIKE :address';
-$people = $pdo->prepare($sql);
+$people = $pdo->prepare($sql)
               ->bindAll(
                   array('age' => $age,           'address' => $address        ),
                   array('age' => PDO::PARAM_INT, 'address' => PDO2::PARAM_LIKE)

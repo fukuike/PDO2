@@ -3,16 +3,16 @@
 /**
  *  PDOStatement2
  *
- * @Version 1.0.0  
+ * @Version 1.0.1  
  * @Author  CertaiN  
  * @License BSD 2-Clause  
  * @GitHub  http://github.com/Certainist/PDO2
  *
  * @require PDO2.class.php
  */
-class PDOStatement2 extends PDOStatement {
+final class PDOStatement2 extends PDOStatement {
     
-    protected static $typeMap = array(
+    private static $typeMap = array(
         'b' => PDO::PARAM_BOOL,
         'n' => PDO::PARAM_NULL,
         'i' => PDO::PARAM_INT,
@@ -21,7 +21,7 @@ class PDOStatement2 extends PDOStatement {
         'L' => PDO2::PARAM_LIKE,
     );
 
-    protected function __construct() {}
+    private function __construct() {}
 
     public function execute($params = null) {
         parent::execute($params);

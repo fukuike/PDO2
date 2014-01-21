@@ -3,7 +3,7 @@ PDO2
 
 Capable extended classes from **`PDO` / `PDOStatement`**.
 
-@Version: 1.0.0  
+@Version: 1.0.1  
 @Author : CertaiN  
 @License: BSD 2-Clause  
 @GitHub : http://github.com/Certainist/PDO2  
